@@ -1,0 +1,85 @@
+#include <stdio.h>
+void lernome(char *n[]);
+void leridade(int *idade);
+void lersalario(float *salario);
+void lersexo(char *sexo);
+
+int main(void) {
+
+	int idade , op;
+	float salario;
+	char sexo;
+	char nome[20];
+	
+	
+	int *pIdade;
+    float *pSalario;
+    char *pSexo;
+    char *pNome;
+    
+    
+    pIdade = &idade;
+    pSalario = &salario;
+    pSexo = &sexo;
+    pNome = &nome;
+    
+    do{
+    Printf(" 0 - Sair\n");
+    Printf(" 1- Cadastrar e listar Nome\n");
+    Printf(" 2 - Cadastrar e listar Idade\n");
+    Printf(" 3- Cadastrar e listar Salario\n");
+    Printf(" 4 - Cadastrar e listar Sexo\n");
+
+    scanf("%d" , &op);
+    }while(op!=0);
+
+    switch(op)
+    {
+      case 1:
+      lernome(pNome);
+      
+      printf(" Seu nome eh %s \n", *pNome);
+      
+      break;
+
+      case 2:
+      leridade(pIdade);
+      
+      printf(" Sua idade eh %d \n", *pIdade);
+      break;
+
+      case 3:
+      lersalario(pSalario);
+      printf(" Seu salario eh %.2f \n",*pSalario);
+      break;
+
+      case 4:
+      lersexo(pSexo);
+     printf(" Seu sexo eh %c \n", *pSexo);
+      break;
+    }
+    
+
+	return 0;
+	
+}
+
+void lernome(char *n[]){
+printf(" Insira seu Nome: \n");
+fgets(n,20,stdin);
+}
+
+void leridade(int *idade){
+printf(" Insira sua Idade: \n");
+scanf("%d" , idade);
+}
+
+void lersalario(float *salario){
+printf(" Insira seu Salario: \n");
+scanf("%f" , salario);
+}
+
+void lersexo(char *sexo){
+printf(" Insira seu Sexo: \n");
+scanf("%c" , sexo);
+}
